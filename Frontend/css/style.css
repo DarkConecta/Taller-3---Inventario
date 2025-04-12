@@ -1,0 +1,36 @@
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px;
+}
+
+.dashboard-item {
+    background-color: #f8f9fa; 
+    border: 1px solid #dee2e6;
+    border-radius: 12px;
+    padding: 40px; 
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 250px; 
+}
+
+.dashboard-item:hover {
+    background-color: #e9ecef;
+    cursor: pointer;
+    transform: scale(1.05); 
+}
+
+.dashboard-item h2 {
+    margin-top: 0;
+    margin-bottom: 20px; 
+    font-size: 2rem; 
+}
+
+.dashboard-item p {
+    font-size: 1.2rem; 
+    color: #6c757d; 
+}

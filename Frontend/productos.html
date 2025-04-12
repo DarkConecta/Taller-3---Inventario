@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+    <script src="js/productos.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container py-5">
+        <h1 class="mb-4">Menú Principal</h1>
+        <div id="menu-container">
+        </div>
+    </div>
+
+    <div id="table-container" class="container">
+        <div id="div3" class="">
+            <table class="table">
+                <thead class="menu-busqueda">
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">CATEGORIA</th>
+                        <th scope="col">NOMBRE</th>
+                        <th scope="col">DESCRIPCION</th>
+                        <th scope="col">PRECIO</th>
+                        <th scope="col">STOCK</th>
+                        <th scope="col">FECHA DE CREACION</th>
+                        <th scope="col">OPCIONES</th>
+                    </tr>
+                </thead>
+                    <tbody class="table-group-divider">
+                    </tbody>
+            </table>
+        </div>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+    <script>
+        fetch('menu.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('menu-container').innerHTML = data;
+                const bsCollapse = new bootstrap.Collapse(document.querySelector('#navbarNav'), {
+                    toggle: false
+                });
+            })
+            .catch(error => {
+                console.error('Error al cargar el menú:', error);
+            });
+    </script>
+</body>
+</html>
